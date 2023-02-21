@@ -5,7 +5,6 @@ export default class idnex extends Component {
   render() {
     return (
       <>
-        <h1 style={{ fontsize: "50px" }}>React-Router-Dom</h1>
         <About />
         <Home />
       </>

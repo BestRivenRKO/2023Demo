@@ -13,17 +13,6 @@ export default class index extends Component {
     }
     // 通知app更新状态
     Pubsub.publish("handle", { isFirst: false, isLoding: true });
-    // axios.get(`/api1/search/users?q=${value}`).then(
-    //   (res) => {
-    //     let p = res.data.items;
-    //     // 请求成功后通知app更新状态
-    //     Pubsub.publish("handle", { isLoding: false, lists: p });
-    //   },
-    //   (err) => {
-    //     // 请求失败后通知app更新状态
-    //     Pubsub.publish("handle", { isLoding: false, err: err.message });
-    //   }
-    // );
     try {
       const res = await fetch(`/api1/search/users2?q=${value}`);
       const data = await res.json();
