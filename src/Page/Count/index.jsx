@@ -1,30 +1,17 @@
 import React, { Component } from "react";
-import store from "../../../Redux/store";
-import {
-  createIncrementAction,
-  createDecrementAction,
-  createIncrementAsyncAction,
-} from "../../../Redux/count_action";
 export default class index extends Component {
-  componentDidMount() {
-    store.subscribe(() => {
-      this.setState({});
-    });
-  }
   // 求和
   handleNumber = (data) => {
     const { value } = this.handleCount;
     switch (data) {
       case "add":
-        return store.dispatch(createIncrementAction(Number(value)));
+        return;
       case "del":
-        return store.dispatch(createDecrementAction(Number(value)));
+        return;
       case "jiadd":
-        return store.getState() % 2 !== 0
-          ? store.dispatch(createIncrementAction(Number(value)))
-          : null;
+        return;
       case "asyncadd":
-        return store.dispatch(createIncrementAsyncAction(Number(value), 1000));
+        return;
       default:
         return false;
     }
@@ -34,7 +21,7 @@ export default class index extends Component {
       <>
         <div className='box'>
           <div className='box_x'>
-            <h2>当前求和为{store.getState()}</h2>
+            <h2>当前求和为</h2>
             <select
               ref={(c) => {
                 this.handleCount = c;
