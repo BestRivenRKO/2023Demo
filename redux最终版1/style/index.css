@@ -1,2 +1,4 @@
 /* 默认样式 */
 @import "./base.scss";
+
+@import "../Page/Count/idnex.scss";
