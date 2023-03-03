@@ -1,16 +1,30 @@
-import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import React from "react";
+import { NavLink, Outlet } from "react-router-dom";
 
 export default function Home() {
-  const [sum, setSum] = useState(0);
-  const handleSum = () => {
-    setSum(2);
-  };
   return (
     <>
-      <div>Home组件222</div>
-      {sum === 2 ? <Navigate to={"/about"} /> : <h1>sum值：{sum}</h1>}
-      <button onClick={handleSum}>点击</button>
+      <div>
+        <h2>Home组件内容</h2>
+        <div>
+          <ul className='nav nav-tabs'>
+            <li>
+              <NavLink className='list-group-item' to='news'>
+                News
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className='list-group-item' to='message'>
+                Message
+              </NavLink>
+            </li>
+          </ul>
+          <h2>
+            {/* 指定路由组件呈现的位置 */}
+            <Outlet />
+          </h2>
+        </div>
+      </div>
     </>
   );
 }
